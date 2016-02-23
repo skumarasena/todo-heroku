@@ -36,5 +36,11 @@ app.post('/api/todos/:todo_id', index);
 app.get('*', index);
 
 // listen (start app with node server.js) ======================================
-app.listen(3000);
-console.log("App listening on port 3000");
+
+var PORT = process.env.PORT || 3000;
+app.listen(PORT, function(err) {
+    if(err) console.log(err)
+});
+
+// app.listen(3000);
+// console.log("App listening on port 3000");
