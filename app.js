@@ -14,7 +14,9 @@ var methodOverride = require('method-override'); // simulate DELETE and PUT (exp
 var app = express();
 
 //mongoose.connect('mongodb://node:nodeuser@mongo.onmodulus.net:27017/uwO3mypu');     // connect to mongoDB database on modulus.io
-mongoose.connect('mongodb://localhost/todos');
+// mongoose.connect('mongodb://localhost/todos');
+mongoose.connect('mongodb://heroku_f97mk2qn:jekb9pr1rlpv385jekhlh8jqgd@ds015398.mongolab.com:15398/heroku_f97mk2qn
+');
 
 
 app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
