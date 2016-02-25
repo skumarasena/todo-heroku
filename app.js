@@ -13,11 +13,6 @@ var methodOverride = require('method-override'); // simulate DELETE and PUT (exp
 
 var app = express();
 
-//mongoose.connect('mongodb://node:nodeuser@mongo.onmodulus.net:27017/uwO3mypu');     // connect to mongoDB database on modulus.io
-// mongoose.connect('mongodb://localhost/todos');
-//mongoose.connect('mongodb://heroku_f97mk2qn:jekb9pr1rlpv385jekhlh8jqgd@ds015398.mongolab.com:15398/heroku_f97mk2qn');
-//mongoose.connect('mongodb://ds015398.mongolab.com:15398/heroku_f97mk2qn');
-
 console.log(process.env['MONGOLAB_URI']);
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/todos');
 
