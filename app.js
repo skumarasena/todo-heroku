@@ -26,6 +26,7 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   console.log('connected!');
+)};
 
 
 app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
