@@ -18,8 +18,8 @@ var app = express();
 //mongoose.connect('mongodb://heroku_f97mk2qn:jekb9pr1rlpv385jekhlh8jqgd@ds015398.mongolab.com:15398/heroku_f97mk2qn');
 //mongoose.connect('mongodb://ds015398.mongolab.com:15398/heroku_f97mk2qn');
 
-console.log(process.env['PROD_MONGODB']);
-mongoose.connect(process.env.PROD_MONGODB || 'mongodb://localhost/todos');
+console.log(process.env['MONGODB_URI']);
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/todos');
 
 var db = mongoose.connection;
 
