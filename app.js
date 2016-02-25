@@ -18,15 +18,15 @@ var app = express();
 //mongoose.connect('mongodb://heroku_f97mk2qn:jekb9pr1rlpv385jekhlh8jqgd@ds015398.mongolab.com:15398/heroku_f97mk2qn');
 //mongoose.connect('mongodb://ds015398.mongolab.com:15398/heroku_f97mk2qn');
 
-console.log(process.env['MONGOLAB_URI']);
-mongoose.connect(process.env.MONGOLAB_URI);
+console.log(process.env['PROD_MONGODB']);
+mongoose.connect(process.env.PROD_MONGODB || 'mongodb://localhost/todos');
 
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   console.log('connected!');
-)};
+});     // connect to mongoDB database on modulus.io
 
 
 app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
